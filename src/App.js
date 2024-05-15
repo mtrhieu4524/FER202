@@ -1,7 +1,7 @@
 import "./App.css";
+import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
-import Footer from "./Footer";
-import Player from "./Players";
+import Player from "./components/Players";
 
 function App() {
   return (
