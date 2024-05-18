@@ -1,68 +1,24 @@
 import React, { Component } from "react";
+import { Players } from "../shared/ListOfPlayers";
 export default class Player extends Component {
   render() {
+    const handleClick = () => {
+      alert("Click successfully!");
+    };
     return (
       <div className="container">
-        <div className="column">
-          <div className="card">
-            <img src="./assets/images/cr.jpg" alt="Cristiano Ronaldo" />
-            <h3>Cristiano Ronaldo</h3>
-            <p className="title">Manchester United</p>
-            <p>
-              <button>Detail</button>
-            </p>
+        {Players.map((player) => (
+          <div className="column" key={player.id}>
+            <div className="card">
+              <img src={player.img} alt={player.name} />
+              <h3>{player.name}</h3>
+              <p className="title">{player.club}</p>
+              <p>
+                <button onClick={handleClick}>Detail</button>
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="column">
-          <div className="card">
-            <img src="./assets/images/kante.jpg" alt="Kante" />
-            <h3>Kante</h3>
-            <p className="title">Chelsea</p>
-            <p>
-              <button>Detail</button>
-            </p>
-          </div>
-        </div>
-        <div className="column">
-          <div className="card">
-            <img src="./assets/images/messi.jpg" alt="Messi" />
-            <h3>Messi</h3>
-            <p className="title">PSG</p>
-            <p>
-              <button>Detail</button>
-            </p>
-          </div>
-        </div>
-        <div className="column">
-          <div className="card">
-            <img src="./assets/images/neymar.jpg" alt="Neymar" />
-            <h3>Neymar</h3>
-            <p className="title">PSG</p>
-            <p>
-              <button>Detail</button>
-            </p>
-          </div>
-        </div>
-        <div className="column">
-          <div className="card">
-            <img src="./assets/images/kane.jpg" alt="Kane" />
-            <h3>Kane</h3>
-            <p className="title">Totteham</p>
-            <p>
-              <button>Detail</button>
-            </p>
-          </div>
-        </div>
-        <div className="column">
-          <div className="card">
-            <img src="./assets/images/haaland.jpg" alt="Haaland" />
-            <h3>Haaland</h3>
-            <p className="title">Manchester City</p>
-            <p>
-              <button>Detail</button>
-            </p>
-          </div>
-        </div>
+        ))}
       </div>
     );
   }
